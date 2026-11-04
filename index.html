@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="kicker">Jorge Luis Fernández Chuljak · Panamá</p>
+  <h1 class="lema">
+    <span>Marcas que <em>conectan.</em></span>
+    <span>Equipos que <em>suman.</em></span>
+    <span>Un mundo que <em>crece.</em></span>
+  </h1>
+  <p class="intro">Más de 25 años en marketing, medios y negocio digital. Voz comercial desde 1998. Voluntario de la Cruz Roja Panameña y de los Shriners. Aquí escribe sobre marcas, liderazgo, servicio y lo que pasa en Panamá.</p>
+</section>
+
+<section id="articulos" class="lista">
+  <div class="filtros" role="tablist">
+    <button class="activo" data-cat="todo">Todo</button>
+    {% for c in site.categorias %}<button data-cat="{{ c.slug }}">{{ c.nombre }}</button>{% endfor %}
+  </div>
+
+  {% if site.posts.size == 0 %}
+    <p class="vacio">Pronto, los primeros artículos.</p>
+  {% endif %}
+
+  <ol class="posts">
+  {% for post in site.posts %}
+    {% assign cat = site.categorias | where: "slug", post.categories.first | first %}
+    <li data-cat="{{ post.categories.first }}">
+      <a href="{{ post.url | relative_url }}">
+        <span class="num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <span class="cuerpo">
+          <span class="tag">{{ cat.nombre | default: post.categories.first }}</span>
+          <span class="titulo">{{ post.title }}</span>
+          <span class="extracto">{{ post.excerpt | strip_html | truncatewords: 26 }}</span>
+        </span>
+        <span class="fecha">{{ post.date | date: "%d.%m.%y" }}</span>
+      </a>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+
+<script>
+  document.querySelectorAll('.filtros button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filtros button').forEach(x => x.classList.toggle('activo', x === b));
+    const c = b.dataset.cat;
+    document.querySelectorAll('.posts li').forEach(li => li.hidden = !(c === 'todo' || li.dataset.cat === c));
+  }));
+  const h = location.hash.slice(1);
+  const pre = h && document.querySelector('.filtros button[data-cat="' + h + '"]');
+  if (pre) pre.click();
+</script>
