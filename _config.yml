@@ -1,0 +1,27 @@
+title: Jorge Luis Fernández Chuljak
+tagline: "Marcas que conectan. Equipos que suman. Un mundo que crece."
+description: "Blog de Jorge Luis Fernández Chuljak: marcas, liderazgo, servicio y opinión desde Panamá."
+url: "https://fernandezchuljak.com"
+lang: es
+timezone: America/Panama
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+feed:
+  path: feed.xml
+author:
+  name: Jorge Luis Fernández Chuljak
+social:
+  instagram: https://www.instagram.com/jlfernandezc/
+  linkedin: https://www.linkedin.com/in/jlfernandezc/
+  x: https://x.com/jlfernandezc
+categorias:
+  - slug: marcas
+    nombre: Marcas y liderazgo
+  - slug: servicio
+    nombre: Servicio
+  - slug: opinion
+    nombre: Opinión
+  - slug: reflexiones
+    nombre: Reflexiones
