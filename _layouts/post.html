@@ -5,18 +5,20 @@ layout: default
 {% assign full_url = page.url | absolute_url %}
 <article class="post">
   <header class="post-head">
-    <a class="tag" href="{{ '/' | relative_url }}#{{ cat.slug }}">{{ cat.nombre | default: page.categories.first }}</a>
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%d/%m/%Y" }} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min de lectura</p>
+    <div class="post-head-in">
+      <a class="tag" href="{{ '/' | relative_url }}#{{ cat.slug }}">{{ cat.nombre | default: page.categories.first }}</a>
+      <h1>{{ page.title }}</h1>
+      <p class="meta">Jorge Luis Fernández Chuljak <i>·</i> {{ page.date | date: "%d.%m.%Y" }} <i>·</i> {{ content | number_of_words | divided_by: 200 | plus: 1 }} min de lectura</p>
+    </div>
   </header>
   {% if page.image %}<img class="post-img" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
   <div class="post-body">{{ content }}</div>
   <footer class="post-foot">
-    <p>Si te sumó, compártelo.</p>
+    <p>Si te sumó, compártelo</p>
     <div class="share">
-      <a target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}">LinkedIn</a>
-      <a target="_blank" rel="noopener" href="https://x.com/intent/post?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}">X</a>
-      <a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}">Facebook</a>
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url={{ full_url | url_encode }}">LinkedIn</a>
+      <a target="_blank" rel="noopener" href="https://x.com/intent/post?url={{ full_url | url_encode }}&text={{ page.title | url_encode }}">X</a>
+      <a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ full_url | url_encode }}">Facebook</a>
       <a target="_blank" rel="noopener" href="https://wa.me/?text={{ page.title | append: ' ' | append: full_url | url_encode }}">WhatsApp</a>
     </div>
     <a class="back" href="{{ '/' | relative_url }}#articulos">← Más artículos</a>
