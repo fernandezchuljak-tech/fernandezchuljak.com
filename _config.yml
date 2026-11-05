@@ -8,11 +8,22 @@ permalink: /:categories/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 feed:
   path: feed.xml
 author:
   name: Jorge Luis Fernández Chuljak
+  url: https://fernandezchuljak.com/sobre-mi/
+exclude:
+  - articulos/
+  - estilos.css
 social:
+  name: Jorge Luis Fernández Chuljak
+  links:
+    - https://www.instagram.com/jlfernandezc/
+    - https://www.linkedin.com/in/jlfernandezc/
+    - https://x.com/jlfernandezc
+    - https://www.facebook.com/jlfernandezchuljak
   instagram: https://www.instagram.com/jlfernandezc/
   linkedin: https://www.linkedin.com/in/jlfernandezc/
   x: https://x.com/jlfernandezc
