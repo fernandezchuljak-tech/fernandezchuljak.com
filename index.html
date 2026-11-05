@@ -1,51 +1,204 @@
----
-layout: default
----
-<section class="hero">
-  <p class="kicker">Jorge Luis Fernández Chuljak · Panamá</p>
-  <h1 class="lema">
-    <span>Marcas que <em>conectan.</em></span>
-    <span>Equipos que <em>suman.</em></span>
-    <span>Un mundo que <em>crece.</em></span>
-  </h1>
-  <p class="intro">Más de 25 años en marketing, medios y negocio digital. Voz comercial desde 1998. Voluntario de la Cruz Roja Panameña y de los Shriners. Aquí escribe sobre marcas, liderazgo, servicio y lo que pasa en Panamá.</p>
-</section>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A0A0A">
+<title>Jorge Luis Fernández Chuljak</title>
+<meta name="description" content="Jorge Luis Fernández Chuljak: liderazgo, marcas, Panamá, servicio y lo que va pasando en el camino.">
+<meta property="og:title" content="Jorge Luis Fernández Chuljak">
+<meta property="og:description" content="Marcas que conectan. Equipos que suman. Un mundo que crece.">
+<meta property="og:url" content="https://fernandezchuljak.com">
+<meta property="og:type" content="website">
+<!-- <meta property="og:image" content="https://fernandezchuljak.com/img/foto.jpg"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
-<section id="articulos" class="lista">
-  <div class="filtros" role="tablist">
-    <button class="activo" data-cat="todo">Todo</button>
-    {% for c in site.categorias %}<button data-cat="{{ c.slug }}">{{ c.nombre }}</button>{% endfor %}
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="marca" href="index.html">Fernández Chuljak<span>.</span></a>
+    <ul>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#momentos">Momentos</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="#contacto">Hablemos</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="hola cursiva">Hola, soy</p>
+    <h1><span>Jorge Luis</span><span>Fernández</span><span class="ap">Chuljak</span></h1>
+    <!-- EDITAR: texto provisional, lo ajustamos con tus palabras -->
+    <p class="bajada">Aquí se habla de todo un poco: de marcas, de equipos, de Panamá, de servir a otros y de las cosas que pasan en el camino. <em>Sin corbata y sin filtro.</em></p>
+    <p class="lema">Marcas que conectan · Equipos que suman · Un mundo que crece</p>
+  </header>
+</div>
+
+<div class="cinta" aria-hidden="true">
+  <div class="pista">
+    <span>Liderazgo</span><i>✦</i><span>Marcas</span><i>✦</i><span>Equipos</span><i>✦</i><span>Panamá</span><i>✦</i><span>Servicio</span><i>✦</i><span>Opinión</span><i>✦</i><span>Vida</span><i>✦</i>
+    <span>Liderazgo</span><i>✦</i><span>Marcas</span><i>✦</i><span>Equipos</span><i>✦</i><span>Panamá</span><i>✦</i><span>Servicio</span><i>✦</i><span>Opinión</span><i>✦</i><span>Vida</span><i>✦</i>
   </div>
+</div>
 
-  {% if site.posts.size == 0 %}
-    <p class="vacio">Pronto, los primeros artículos.</p>
-  {% endif %}
+<main class="wrap">
 
-  <ol class="posts">
-  {% for post in site.posts %}
-    {% assign cat = site.categorias | where: "slug", post.categories.first | first %}
-    <li data-cat="{{ post.categories.first }}">
-      <a href="{{ post.url | relative_url }}">
-        <span class="num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        <span class="cuerpo">
-          <span class="tag">{{ cat.nombre | default: post.categories.first }}</span>
-          <span class="titulo">{{ post.title }}</span>
-          <span class="extracto">{{ post.excerpt | strip_html | truncatewords: 26 }}</span>
-        </span>
-        <span class="fecha">{{ post.date | date: "%d.%m.%y" }}</span>
-      </a>
-    </li>
-  {% endfor %}
-  </ol>
-</section>
+  <!-- ===== BLOG (el lado LinkedIn: ideas) ===== -->
+  <section class="blog" id="blog">
+    <div class="cabecera">
+      <h2><span class="cursiva">lo que pienso</span>Blog</h2>
+      <div class="filtros" role="group" aria-label="Filtrar por tema">
+        <button type="button" data-f="todo" aria-pressed="true">Todo</button>
+        <button type="button" data-f="lid" aria-pressed="false">Liderazgo</button>
+        <button type="button" data-f="mar" aria-pressed="false">Marcas</button>
+        <button type="button" data-f="pan" aria-pressed="false">Panamá</button>
+        <button type="button" data-f="ser" aria-pressed="false">Servicio</button>
+        <button type="button" data-f="ref" aria-pressed="false">Reflexiones</button>
+      </div>
+    </div>
+
+    <!--
+      CÓMO AGREGAR UN ARTÍCULO
+      1. Copia articulos/plantilla.html, renómbrala (ej. articulos/el-valor-de-servir.html) y pega el texto.
+      2. El más reciente va como DESTACADO. El anterior destacado pasa a ser el primer <li> de la lista.
+      3. Temas (data-cat): lid, mar, pan, ser, ref. Se pueden agregar más.
+    -->
+
+    <a class="destacado entrada-blog" data-cat="ref" href="articulos/bienvenidos.html">
+      <div class="img"><div class="placa"></div></div>
+      <div class="txt">
+        <span class="tag">Reflexiones</span>
+        <h3>Bienvenidos: un espacio para conectar, sumar y crecer</h3>
+        <p>Las buenas ideas crecen cuando se comparten.</p>
+        <span class="meta">4 de noviembre de 2026</span>
+      </div>
+    </a>
+
+    <ul class="lista">
+      <li class="entrada-blog" data-cat="ser">
+        <a href="articulos/plantilla.html">
+          <div class="img"><div class="placa"></div></div>
+          <span class="tag">Servicio</span>
+          <h3>Lo que te enseña servir</h3>
+          <p>Shriners, Cruz Roja y la gente que hace posible cada causa.</p>
+          <span class="meta">Próximamente</span>
+        </a>
+      </li>
+      <li class="entrada-blog" data-cat="pan">
+        <a href="articulos/plantilla.html">
+          <div class="img"><div class="placa"></div></div>
+          <span class="tag">Panamá</span>
+          <h3>Panamá, dicho de frente</h3>
+          <p>Temas del país y de la calle, con opinión propia.</p>
+          <span class="meta">Próximamente</span>
+        </a>
+      </li>
+      <li class="entrada-blog" data-cat="mar">
+        <a href="articulos/plantilla.html">
+          <div class="img"><div class="placa"></div></div>
+          <span class="tag">Marcas</span>
+          <h3>Marcas que se sienten</h3>
+          <p>Lo que deja más de dos décadas entre agencias, medios y micrófonos.</p>
+          <span class="meta">Próximamente</span>
+        </a>
+      </li>
+    </ul>
+    <p class="vacio" id="sin-resultados" hidden>Todavía no hay escritos de este tema. Pronto.</p>
+  </section>
+
+  <!-- ===== MOMENTOS (el lado Instagram: lo que se vive) ===== -->
+  <section class="momentos" id="momentos">
+    <div class="cabecera">
+      <h2><span class="cursiva">lo que vivo</span>Momentos</h2>
+      <a class="btn" href="https://instagram.com/jlfernandezc" target="_blank" rel="me noopener">Seguir en Instagram @jlfernandezc</a>
+    </div>
+    <!-- Cada foto: <li><a href="ENLACE-DEL-POST" target="_blank" rel="noopener"><img src="img/momento-1.jpg" alt="Descripción"><span class="pie">Texto corto</span></a></li> -->
+    <ul class="rejilla">
+      <li><div class="placa"></div></li>
+      <li><div class="placa"></div></li>
+      <li><div class="placa"></div></li>
+      <li><div class="placa"></div></li>
+      <li><div class="placa"></div></li>
+      <li><div class="placa"></div></li>
+    </ul>
+  </section>
+
+  <section class="frase">
+    <p>Las marcas <b>conectan</b>.<br>Los equipos <b>suman</b>.<br>Y el mundo, si le pones corazón, <b>crece</b>.</p>
+  </section>
+
+  <!-- ===== TRAYECTORIA (el lado LinkedIn: experiencia) ===== -->
+  <section class="carrera" id="sobre">
+    <div>
+      <div class="foto">
+        <!-- Reemplaza por: <img src="img/foto.jpg" alt="Jorge Luis Fernández Chuljak"> -->
+        Tu foto va aquí
+      </div>
+    </div>
+    <div>
+      <div class="cabecera"><h2><span class="cursiva">de dónde vengo</span>Trayectoria</h2></div>
+      <div class="cifras">
+        <div><b>1998</b><span>frente al micrófono por primera vez</span></div>
+        <div><b>2</b><span>países liderando operación</span></div>
+        <div><b>+20</b><span>años entre marcas y medios</span></div>
+      </div>
+      <ol class="linea-tiempo">
+        <li><span class="meta">2025 – hoy</span><div><h3>Director de País · Sportium Panamá</h3><p>Grupo CIRSA · online y retail</p></div></li>
+        <li><span class="meta">2023 – 2024</span><div><h3>Ganabet / Sportium México</h3><p>Marketing y luego dirección país</p></div></li>
+        <li><span class="meta">Antes</span><div><h3>Digicel · Claro · Telefónica · McCann</h3><p>Marketing, publicidad y medios</p></div></li>
+        <li><span class="meta">Siempre</span><div><h3>Shriners · Cruz Roja Panameña</h3><p>Servicio, recaudación y comunidad</p></div></li>
+      </ol>
+      <div class="redes">
+        <a class="btn" href="sobre-mi.html">Conocer la historia completa</a>
+        <!-- EDITAR: enlace de LinkedIn -->
+        <a class="btn" href="#" target="_blank" rel="me noopener">Ver en LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <h2><a href="mailto:jorge@fernandezchuljak.com">Hablemos.</a></h2>
+    <p>Un café, una causa, una charla o una idea loca. Escríbeme.</p>
+    <div class="redes">
+      <a class="btn prim" href="mailto:jorge@fernandezchuljak.com">jorge@fernandezchuljak.com</a>
+      <a class="btn" href="https://instagram.com/jlfernandezc" rel="me noopener" target="_blank">Instagram</a>
+      <!-- EDITAR: reemplaza # por tus enlaces -->
+      <a class="btn" href="#" rel="me noopener" target="_blank">LinkedIn</a>
+      <a class="btn" href="#" rel="me noopener" target="_blank">Facebook</a>
+      <a class="btn" href="#" rel="me noopener" target="_blank">X</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jorge Luis Fernández Chuljak · Hecho en Panamá</span>
+    <a href="#">Volver arriba ↑</a>
+  </div>
+</footer>
 
 <script>
-  document.querySelectorAll('.filtros button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.filtros button').forEach(x => x.classList.toggle('activo', x === b));
-    const c = b.dataset.cat;
-    document.querySelectorAll('.posts li').forEach(li => li.hidden = !(c === 'todo' || li.dataset.cat === c));
-  }));
-  const h = location.hash.slice(1);
-  const pre = h && document.querySelector('.filtros button[data-cat="' + h + '"]');
-  if (pre) pre.click();
+(function(){
+  var botones=document.querySelectorAll('.filtros button');
+  var entradas=document.querySelectorAll('.entrada-blog');
+  var vacio=document.getElementById('sin-resultados');
+  botones.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.dataset.f, visibles=0;
+      botones.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      entradas.forEach(function(e){
+        var ok=f==='todo'||e.dataset.cat===f;
+        e.hidden=!ok; if(ok)visibles++;
+      });
+      vacio.hidden=visibles>0;
+    });
+  });
+})();
 </script>
+</body>
+</html>
