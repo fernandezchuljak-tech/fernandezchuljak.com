@@ -1,0 +1,70 @@
+# Demos de locución. El primero de la lista sale arriba.
+# destacado: true = aparece en "Destacados". tipo: Comercial | Institucional | Narración | Evento
+- titulo: '"Patria", de Ricardo Miró'
+  tipo: Narración
+  anio: 2022
+  archivo: 03-patria-ricardo-miro.mp3
+  duracion: "2:06"
+  destacado: true
+- titulo: Chevrolet (demo)
+  tipo: Comercial
+  anio: 2026
+  archivo: 01-chevrolet-demo.mp3
+  duracion: "0:26"
+  destacado: true
+- titulo: Cruz Roja Panameña · Bocas del Toro
+  tipo: Institucional
+  anio: 2021
+  archivo: 06-cruz-roja-bocas-del-toro.mp3
+  duracion: "0:44"
+  destacado: true
+- titulo: Carrera Fundación Abou Saad
+  tipo: Institucional
+  anio: 2021
+  archivo: 05-carrera-fundacion-abou-saad-2021.mp3
+  duracion: "1:00"
+- titulo: BBQ Fest La Chorrera
+  tipo: Evento
+  anio: 2026
+  archivo: 02-bbqfest-la-chorrera.mp3
+  duracion: "0:31"
+- titulo: Cuattro Elementos
+  tipo: Comercial
+  anio: 2022
+  archivo: 04-cuattro-elementos.mp3
+  duracion: "0:21"
+- titulo: Cruz Roja Panameña · Salud mental 1
+  tipo: Institucional
+  anio: 2021
+  archivo: 07-cruz-roja-salud-mental-1.mp3
+  duracion: "0:31"
+- titulo: Cruz Roja Panameña · Salud mental 2
+  tipo: Institucional
+  anio: 2021
+  archivo: 08-cruz-roja-salud-mental-2.mp3
+  duracion: "0:26"
+- titulo: Demo comercial 1
+  tipo: Comercial
+  anio: 2020
+  archivo: 09-demo-spot-1.mp3
+  duracion: "0:57"
+- titulo: Demo comercial 2
+  tipo: Comercial
+  anio: 2020
+  archivo: 10-demo-spot-2.mp3
+  duracion: "0:39"
+- titulo: Demo comercial 3
+  tipo: Comercial
+  anio: 2020
+  archivo: 11-demo-spot-3.mp3
+  duracion: "0:54"
+- titulo: Demo comercial 4
+  tipo: Comercial
+  anio: 2020
+  archivo: 12-demo-spot-4.mp3
+  duracion: "0:30"
+- titulo: Demo comercial 5
+  tipo: Comercial
+  anio: 2020
+  archivo: 13-demo-spot-5.mp3
+  duracion: "0:30"
