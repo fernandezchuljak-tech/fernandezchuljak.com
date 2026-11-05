@@ -79,9 +79,61 @@ layout: default
       <div><strong>1998</strong><span>en cabina desde</span></div>
       <div><strong>25+</strong><span>años de experiencia</span></div>
     </div>
-    <a class="btn" href="{{ site.social.instagram }}" target="_blank" rel="noopener">Escríbeme para cotizar <i>→</i></a>
+    <a class="btn" href="#demos">Escuchar demos <i>↓</i></a>
+    <a class="btn btn-sutil-osc" href="mailto:jorge@fernandezchuljak.com?subject=Cotizaci%C3%B3n%20de%20locuci%C3%B3n">Cotizar locución <i>→</i></a>
   </div>
 </section>
+
+<!-- DEMOS DE LOCUCIÓN (la lista se edita en _data/locuciones.yml; los audios van en assets/audio/) -->
+<section class="demos" id="demos">
+  <header class="demos-head">
+    <h3>Escucha los demos</h3>
+    <div class="demos-filtros" role="group" aria-label="Filtrar demos por tipo">
+      <button class="activo" data-tipo="todo">Todo</button>
+      {% assign tipos = site.data.locuciones | map: "tipo" | uniq %}{% for t in tipos %}<button data-tipo="{{ t }}">{{ t }}</button>{% endfor %}
+    </div>
+  </header>
+  <ol class="demos-lista">
+  {% assign destacados = site.data.locuciones | where: "destacado", true %}
+  {% assign resto = site.data.locuciones | where_exp: "d", "d.destacado != true" %}
+  {% assign todos = destacados | concat: resto %}
+  {% for d in todos %}
+    <li class="demo{% if d.destacado %} demo-top{% endif %}" data-tipo="{{ d.tipo }}">
+      <button class="demo-play" aria-label="Reproducir {{ d.titulo }}"><span class="ic"></span></button>
+      <div class="demo-info">
+        <span class="demo-titulo">{{ d.titulo }}</span>
+        <span class="demo-meta">{% if d.destacado %}<b>Destacado</b> · {% endif %}{{ d.tipo }} · {{ d.anio }}</span>
+        <span class="demo-barra"><i></i></span>
+      </div>
+      <span class="demo-dur">{{ d.duracion }}</span>
+      <audio preload="none" src="{{ '/assets/audio/' | append: d.archivo | relative_url }}"></audio>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.demo'));
+  function parar(li){var a=li.querySelector('audio');a.pause();li.classList.remove('sonando');}
+  items.forEach(function(li){
+    var a=li.querySelector('audio'), b=li.querySelector('.demo-play'), barra=li.querySelector('.demo-barra'), rel=li.querySelector('.demo-barra i');
+    b.addEventListener('click',function(){
+      if(a.paused){items.forEach(function(o){if(o!==li)parar(o);});a.play();li.classList.add('sonando');b.setAttribute('aria-label','Pausar '+li.querySelector('.demo-titulo').textContent);}
+      else{parar(li);b.setAttribute('aria-label','Reproducir '+li.querySelector('.demo-titulo').textContent);}
+    });
+    a.addEventListener('timeupdate',function(){if(a.duration)rel.style.width=(a.currentTime/a.duration*100)+'%';});
+    a.addEventListener('ended',function(){li.classList.remove('sonando');rel.style.width='0';});
+    barra.addEventListener('click',function(e){if(a.duration){var r=barra.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;}});
+  });
+  document.querySelectorAll('.demos-filtros button').forEach(function(bt){
+    bt.addEventListener('click',function(){
+      document.querySelectorAll('.demos-filtros button').forEach(function(x){x.classList.toggle('activo',x===bt);});
+      var t=bt.dataset.tipo; items.forEach(function(li){li.hidden=!(t==='todo'||li.dataset.tipo===t);});
+    });
+  });
+})();
+</script>
 
 <!-- PERSONAL -->
 <section class="bloque" id="personal">
