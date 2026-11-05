@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bienvenidos · Jorge Luis Fernández Chuljak</title>
+<meta name="description" content="Las buenas ideas crecen cuando se comparten.">
+<meta property="og:title" content="Bienvenidos: un espacio para conectar, sumar y crecer">
+<meta property="og:description" content="Las buenas ideas crecen cuando se comparten.">
+<meta property="og:type" content="article">
+<!-- <meta property="og:image" content="https://fernandezchuljak.com/img/nombre-foto.jpg"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Principal">
+    <a class="marca" href="../index.html">Fernández Chuljak<span>.</span></a>
+    <ul>
+      <li><a href="../index.html#blog" aria-current="page">Blog</a></li>
+      <li><a href="../index.html#momentos">Momentos</a></li>
+      <li><a href="../sobre-mi.html">Sobre mí</a></li>
+      <li><a href="../index.html#contacto">Hablemos</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="angosto articulo">
+  <a class="volver" href="../index.html#blog">← Volver al blog</a>
+
+  <article>
+    <p style="margin-top:28px"><span class="tag">Reflexiones</span></p>
+    <h1>Bienvenidos: un espacio para conectar, sumar y crecer</h1>
+    <p class="entrada">Las buenas ideas crecen cuando se comparten.</p>
+    <p class="meta">Por Jorge Luis Fernández Chuljak · <time datetime="2026-11-04">4 de noviembre de 2026</time></p>
+
+
+    <div class="cuerpo">
+      <p>Este espacio nace de una idea sencilla: las buenas ideas crecen cuando se comparten.</p>
+      <p>Aquí vamos a conversar sobre marcas que conectan con las personas, sobre equipos que suman más que la suma de sus talentos, y sobre el servicio a la comunidad que nos recuerda para qué hacemos lo que hacemos. También habrá espacio para opinar sobre lo que pasa en Panamá, con respeto y con ganas de construir.</p>
+      <blockquote>Marcas que conectan. Equipos que suman. Un mundo que crece.</blockquote>
+      <p>Gracias por estar aquí. Nos leemos pronto.</p>
+    </div>
+
+    <div class="firma">
+      <div>
+        <strong>Jorge Luis Fernández Chuljak</strong>
+        <span class="meta">Marcas que conectan. Equipos que suman. Un mundo que crece.</span>
+      </div>
+    </div>
+
+    <div class="compartir">
+      <a class="btn" id="sh-li" href="#" target="_blank" rel="noopener">Compartir en LinkedIn</a>
+      <a class="btn" id="sh-fb" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" id="sh-x" href="#" target="_blank" rel="noopener">X</a>
+      <a class="btn" id="sh-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jorge Luis Fernández Chuljak · Panamá</span>
+    <a href="mailto:jorge@fernandezchuljak.com">jorge@fernandezchuljak.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var u=encodeURIComponent(location.href), t=encodeURIComponent(document.querySelector('h1').textContent);
+  document.getElementById('sh-li').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;
+  document.getElementById('sh-fb').href='https://www.facebook.com/sharer/sharer.php?u='+u;
+  document.getElementById('sh-x').href='https://x.com/intent/post?url='+u+'&text='+t;
+  document.getElementById('sh-wa').href='https://wa.me/?text='+t+'%20'+u;
+})();
+</script>
+</body>
+</html>
