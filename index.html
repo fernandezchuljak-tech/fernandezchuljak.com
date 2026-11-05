@@ -10,36 +10,116 @@ layout: default
       <span>Equipos que <b>suman.</b></span>
       <span>Un mundo que <b>crece.</b></span>
     </h1>
-    <p class="hero-sub">Ideas sobre marcas, liderazgo y servicio a la comunidad.</p>
-    <a class="btn" href="#articulos">Leer artículos <i>↓</i></a>
+    <p class="hero-sub">Negocios, empresa, liderazgo, servicio a la comunidad y los temas que nos mueven. Y una voz que acompaña desde 1998.</p>
+    <div class="hero-btns">
+      <a class="btn" href="#articulos">Leer artículos <i>↓</i></a>
+      <a class="btn btn-sutil" href="#redes">Sígueme <i>→</i></a>
+    </div>
   </div>
-  <p class="hero-tags">Marketing <i>·</i> Liderazgo <i>·</i> Servicio</p>
+  <p class="hero-tags">Profesional <i>·</i> Social <i>·</i> Personal <i>·</i> Locutor</p>
 </section>
 
-<section class="pilares">
-  <div class="pilar reveal">
-    <span class="n">01</span>
-    <h2>Marcas</h2>
-    <p>Más de 25 años en marketing, publicidad, medios y negocio digital. Marcas que se ganan la confianza conectando con las personas.</p>
-  </div>
-  <div class="pilar reveal">
-    <span class="n">02</span>
-    <h2>Equipos</h2>
-    <p>Liderar es sumar talentos. Equipos que crecen juntos y construyen resultados que ninguno lograría por separado.</p>
-  </div>
-  <div class="pilar reveal">
-    <span class="n">03</span>
-    <h2>Comunidad</h2>
-    <p>Voluntario de la Cruz Roja Panameña y de los Shriners. El servicio nos recuerda para qué hacemos lo que hacemos.</p>
+<!-- PROFESIONAL -->
+<section class="bloque" id="profesional">
+  <header class="bloque-head reveal">
+    <span class="n">01 — Profesional</span>
+    <h2>Negocios, empresa<br>y liderazgo.</h2>
+  </header>
+  <div class="pilares">
+    <div class="pilar reveal">
+      <h3>Negocios</h3>
+      <p>Más de 25 años en empresas de marketing, publicidad, medios, telecomunicaciones y entretenimiento: CIRSA, Digicel, Claro, Telefónica y McCann.</p>
+    </div>
+    <div class="pilar reveal">
+      <h3>Liderazgo</h3>
+      <p>Director de País de Sportium Panamá. Liderar es sumar talentos: equipos que crecen juntos y logran lo que ninguno lograría por separado.</p>
+    </div>
+    <div class="pilar reveal">
+      <h3>Marcas y digital</h3>
+      <p>Marcas que se ganan la confianza conectando con las personas, y negocios que crecen en un mundo digital.</p>
+    </div>
   </div>
 </section>
 
-<section class="cifras">
-  <div class="reveal"><strong>25+</strong><span>años construyendo marcas</span></div>
-  <div class="reveal"><strong>1998</strong><span>voz comercial desde</span></div>
-  <div class="reveal"><strong>2</strong><span>causas: Cruz Roja y Shriners</span></div>
+<!-- SOCIAL -->
+<section class="bloque bloque-osc" id="social">
+  <header class="bloque-head reveal">
+    <span class="n">02 — Social</span>
+    <h2>Un mundo que crece<br>cuando servimos.</h2>
+  </header>
+  <div class="causas">
+    <article class="causa reveal">
+      <span class="causa-tag">Voluntario</span>
+      <h3>Cruz Roja Panameña</h3>
+      <p>Parte del equipo fundador del comité de Portobelo, con programas para la comunidad. Movilización de fondos y apoyo en las operaciones durante el COVID.</p>
+    </article>
+    <article class="causa reveal">
+      <span class="causa-tag">Voluntario</span>
+      <h3>Abou Saad Shriners</h3>
+      <p>Lideró el área de comunicaciones, organizó actividades de recaudación y formó parte del comité de evacuación de niños para atención médica especializada.</p>
+    </article>
+    <article class="causa causa-video reveal">
+      <span class="causa-tag">Causa</span>
+      <h3>Dona sangre, salva vidas</h3>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/oOJ39p7LVuA" title="Por qué donar sangre en Panamá salva vidas" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article>
+  </div>
 </section>
 
+<!-- LOCUTOR -->
+<section class="locutor" id="locutor">
+  <div class="onda" aria-hidden="true">{% for i in (1..48) %}<i style="--i:{{ i }}"></i>{% endfor %}</div>
+  <div class="locutor-in reveal">
+    <span class="n">03 — Locutor</span>
+    <h2>Una voz para<br>tu marca.</h2>
+    <p>Locutor comercial desde 1998. Más de dos décadas dándole voz a marcas, campañas y mensajes que necesitan conectar.</p>
+    <div class="locutor-datos">
+      <div><strong>1998</strong><span>en cabina desde</span></div>
+      <div><strong>25+</strong><span>años de experiencia</span></div>
+    </div>
+    <a class="btn" href="{{ site.social.instagram }}" target="_blank" rel="noopener">Escríbeme para cotizar <i>→</i></a>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section class="bloque" id="personal">
+  <header class="bloque-head reveal">
+    <span class="n">04 — Personal</span>
+    <h2>Padre. Esposo.<br>Libre pensador.</h2>
+  </header>
+  <div class="pilares">
+    <div class="pilar reveal">
+      <h3>Familia</h3>
+      <p>Lo primero. El lugar desde donde todo lo demás tiene sentido.</p>
+    </div>
+    <div class="pilar reveal">
+      <h3>Panameño</h3>
+      <p>Orgullosamente panameño, con opinión sobre lo que pasa en el país y ganas de construir.</p>
+    </div>
+    <div class="pilar reveal">
+      <h3>Curioso</h3>
+      <p>Viajes, teatro y música: las experiencias que enseñan, forjan y sorprenden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REDES -->
+<section class="redes-sec" id="redes">
+  <header class="bloque-head reveal">
+    <span class="n">Conectemos</span>
+    <h2>Sígueme en redes.</h2>
+  </header>
+  <div class="redes-grid">
+    <a class="red reveal" href="{{ site.social.instagram }}" target="_blank" rel="me noopener"><span>Instagram</span><strong>@jlfernandezc</strong><em>Lo personal y lo social</em><i>↗</i></a>
+    <a class="red reveal" href="{{ site.social.linkedin }}" target="_blank" rel="me noopener"><span>LinkedIn</span><strong>/in/jlfernandezc</strong><em>Lo profesional</em><i>↗</i></a>
+    <a class="red reveal" href="{{ site.social.facebook }}" target="_blank" rel="me noopener"><span>Facebook</span><strong>/jlfernandezchuljak</strong><em>Comunidad</em><i>↗</i></a>
+    <a class="red reveal" href="{{ site.social.x }}" target="_blank" rel="me noopener"><span>X</span><strong>@jlfernandezc</strong><em>Opinión</em><i>↗</i></a>
+  </div>
+</section>
+
+<!-- ARTÍCULOS -->
 <section id="articulos" class="lista">
   <header class="lista-head">
     <h2>Artículos</h2>
