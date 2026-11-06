@@ -1,4 +1,5 @@
 ---
+image: /assets/og/og-medios.png
 layout: post
 title: "La evolución de los medios y su conexión con el negocio"
 categories: [negocios]
