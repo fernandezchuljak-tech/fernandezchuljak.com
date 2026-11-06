@@ -1,4 +1,5 @@
 ---
+description: "Lo que Henry Dunant vio tras la batalla de Solferino y por qué su mensaje de humanidad sigue guiando a quienes servimos en la Cruz Roja."
 image: /assets/og/og-solferino.png
 layout: post
 title: "Un recuerdo de Solferino"

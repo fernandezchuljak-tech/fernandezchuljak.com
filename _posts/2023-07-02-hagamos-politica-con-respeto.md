@@ -1,4 +1,5 @@
 ---
+description: "Las posturas políticas pasan; la institucionalidad del país queda. Una invitación a debatir con respeto, informarnos y pensar en el bien común."
 layout: post
 title: "Hagamos política con respeto"
 categories: [opinion]

@@ -1,4 +1,5 @@
 ---
+description: "El tiempo es lo único que no vuelve. Una reflexión sobre el libre albedrío, las prioridades y en qué vale la pena invertir cada día."
 image: /assets/og/og-tiempo.png
 layout: post
 title: "El tiempo y la priorización"
