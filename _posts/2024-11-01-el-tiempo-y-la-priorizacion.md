@@ -1,4 +1,5 @@
 ---
+image: /assets/og/og-tiempo.png
 layout: post
 title: "El tiempo y la priorización"
 categories: [reflexiones]
