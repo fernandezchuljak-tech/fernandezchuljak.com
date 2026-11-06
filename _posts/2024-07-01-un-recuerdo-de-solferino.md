@@ -1,4 +1,5 @@
 ---
+image: /assets/og/og-solferino.png
 layout: post
 title: "Un recuerdo de Solferino"
 categories: [servicio]
