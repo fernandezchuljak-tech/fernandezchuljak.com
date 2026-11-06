@@ -1,4 +1,5 @@
 ---
+image: /assets/og/og-consumidor.png
 layout: post
 title: "Un día en la vida del consumidor"
 description: "Los datos te dicen qué pasa. Salir a la calle, con la mente abierta, te ayuda a entender por qué."
