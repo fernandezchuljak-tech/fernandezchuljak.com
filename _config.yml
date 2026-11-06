@@ -1,10 +1,18 @@
 title: Jorge Luis Fernández Chuljak
-tagline: "Marcas que conectan. Equipos que suman. Un mundo que crece."
+tagline: "Marketing, liderazgo y servicio"
 description: "Blog de Jorge Luis Fernández Chuljak: negocios, empresa, liderazgo, servicio a la comunidad y temas de actualidad desde Panamá."
 url: "https://fernandezchuljak.com"
 lang: es
 timezone: America/Panama
 permalink: /:categories/:title/
+twitter:
+  username: jlfernandezc
+  card: summary_large_image
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og/og-home.png
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

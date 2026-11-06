@@ -4,12 +4,12 @@ layout: default
 <section class="hero">
   {% include icono.svg clase="hero-mark" %}
   <div class="hero-in">
-    <p class="kicker">Jorge Luis Fernández Chuljak <span>—</span> Panamá</p>
-    <h1 class="lema">
+    <h1 class="kicker">Jorge Luis Fernández Chuljak <span>—</span> Panamá</h1>
+    <p class="lema">
       <span>Marcas que <b>conectan.</b></span>
       <span>Equipos que <b>suman.</b></span>
       <span>Un mundo que <b>crece.</b></span>
-    </h1>
+    </p>
     <p class="hero-sub">Negocios, empresa, liderazgo, servicio a la comunidad y los temas que nos mueven. Y una voz que acompaña desde 1998.</p>
     <div class="hero-btns">
       <a class="btn" href="#articulos">Leer artículos <i>↓</i></a>
@@ -62,7 +62,10 @@ layout: default
       <span class="causa-tag">Causa</span>
       <h3>Dona sangre, salva vidas</h3>
       <div class="video">
-        <iframe src="https://www.youtube-nocookie.com/embed/oOJ39p7LVuA" title="Por qué donar sangre en Panamá salva vidas" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button class="video-play" data-yt="oOJ39p7LVuA" data-titulo="Por qué donar sangre en Panamá salva vidas" aria-label="Reproducir video: Por qué donar sangre en Panamá salva vidas">
+          <img src="https://i.ytimg.com/vi/oOJ39p7LVuA/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="video-ic" aria-hidden="true"></span>
+        </button>
       </div>
     </article>
   </div>
@@ -175,9 +178,9 @@ layout: default
 <section id="articulos" class="lista">
   <header class="lista-head">
     <h2>Artículos</h2>
-    <div class="filtros" role="tablist">
-      <button class="activo" data-cat="todo">Todo</button>
-      {% for c in site.categorias %}<button data-cat="{{ c.slug }}">{{ c.nombre }}</button>{% endfor %}
+    <div class="filtros" role="group" aria-label="Filtrar artículos por tema">
+      <button class="activo" data-cat="todo" aria-pressed="true">Todo</button>
+      {% for c in site.categorias %}<button data-cat="{{ c.slug }}" aria-pressed="false">{{ c.nombre }}</button>{% endfor %}
     </div>
   </header>
 
@@ -210,11 +213,22 @@ layout: default
 
 <script>
   document.querySelectorAll('.filtros button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.filtros button').forEach(x => x.classList.toggle('activo', x === b));
+    document.querySelectorAll('.filtros button').forEach(x => { x.classList.toggle('activo', x === b); x.setAttribute('aria-pressed', x === b); });
     const c = b.dataset.cat;
     document.querySelectorAll('.posts li').forEach(li => li.hidden = !(c === 'todo' || li.dataset.cat === c));
   }));
   const h = location.hash.slice(1);
   const pre = h && document.querySelector('.filtros button[data-cat="' + h + '"]');
   if (pre) pre.click();
+</script>
+
+<script>
+  document.querySelectorAll('.video-play').forEach(b => b.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1';
+    f.title = b.dataset.titulo;
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    b.replaceWith(f);
+  }));
 </script>
